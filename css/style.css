@@ -40,7 +40,6 @@ button {
   cursor: pointer;
   transition: transform 0.2s;
     z-index: 1001;
-
 }
 
 button:hover {
@@ -49,7 +48,7 @@ button:hover {
 a{
   color: white;
   text-decoration: none;
-  font-size: 3rem
+  font-size: 1.5rem
 }
 #theme-toggle {
   position: absolute;
@@ -398,7 +397,7 @@ video {
   
   min-height: 100vh;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 1;
   transform: translate(-50%, -50%);
   object-fit: cover;
