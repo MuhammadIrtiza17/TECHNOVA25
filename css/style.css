@@ -71,7 +71,7 @@ a{
 }
 
 .landing h1 {
-  font-size: 11vmax;
+  font-size: 10vmax;
   margin-bottom: 0em;
   margin-top: 0em;
   z-index: 1000;
@@ -224,7 +224,7 @@ footer {
   top: 0;
   background: var(--accent);
   padding: 0.5em 1em;
-  z-index: 100;
+  z-index: 1000000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
