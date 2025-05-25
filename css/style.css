@@ -40,6 +40,7 @@ button {
   cursor: pointer;
   transition: transform 0.2s;
     z-index: 1001;
+
 }
 
 button:hover {
@@ -48,7 +49,6 @@ button:hover {
 a{
   color: white;
   text-decoration: none;
-  font-size: 1rem
 }
 #theme-toggle {
   position: absolute;
@@ -63,10 +63,11 @@ a{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: white;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   color: white;
   text-align: center;
   padding: 0em;
+  margin-bottom: 3% !important;
 }
 
 .landing h1 {
@@ -397,7 +398,7 @@ video {
   
   min-height: 100vh;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   transform: translate(-50%, -50%);
   object-fit: cover;
@@ -409,7 +410,7 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  height: 95vh;
+  height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.5); /* black transparent overlay */
   z-index: 1;
@@ -445,10 +446,7 @@ video {
     margin: 1em;
     box-sizing: border-box;
   }
-  #contact-form,#about-event{
-  width: 70%;
-
- }
+  
  .glass-ball {
           display: none;
         }
