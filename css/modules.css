@@ -1,0 +1,336 @@
+* {
+        font-family: "VT323", monospace;
+        font-weight: 400;
+        font-style: normal;
+      }
+      :root {
+        --accent: #a5000e;
+        --light-bg: #ffffff;
+        --dark-bg: #1e1e1e;
+        --light-text: #000000;
+        --dark-text: #f1f1f1;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: var(--light-bg);
+        color: var(--light-text);
+        transition: background-color 0.3s, color 0.3s;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 30% 30%, #ff4b5c, transparent 40%),
+          radial-gradient(circle at 70% 40%, #f9c80e, transparent 40%),
+          radial-gradient(circle at 50% 70%, #845ec2, transparent 40%),
+          radial-gradient(circle at 60% 60%, #43bccd, transparent 40%);
+        background-blend-mode: screen;
+        animation: moveBlobs 20s ease-in-out infinite;
+        z-index: -1;
+        filter: blur(80px);
+      }
+
+      @keyframes moveBlobs {
+        0% {
+          transform: translate(0%, 0%) rotate(0deg);
+        }
+        50% {
+          transform: translate(10%, -10%) rotate(180deg);
+        }
+        100% {
+          transform: translate(0%, 0%) rotate(360deg);
+        }
+      }
+      body.dark-mode {
+        background: var(--dark-bg);
+        color: var(--dark-text);
+      }
+      /* Floating Button */
+      .floating-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: rotate 5s linear infinite;
+
+        font-size: 28px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.3s;
+        z-index: 1000;
+      }
+
+      .floating-btn:hover {
+        background-color: #b8323a;
+        transform: scale(1.1);
+      }
+
+      /* Modal Overlay */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1500;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      /* Modal Content Box */
+      .modal-content {
+        background-color: var(--light-bg);
+        margin: 10% auto;
+        padding: 20px 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 400px;
+        color: var(--light-text);
+        position: relative;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .glass-ball {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(255, 170, 170, 0.7),
+          rgba(145, 111, 111, 0.1)
+        );
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3),
+          0 8px 20px rgba(102, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease-out;
+        z-index: 99;
+      }
+
+      /* Close Button */
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--accent);
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: #b8323a;
+      }
+
+      .schedule-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      .schedule-list li {
+        margin-bottom: 12px;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      nav {
+        background: var(--accent);
+        padding: 1em 2em;
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+      nav a:hover {
+        opacity: 0.7;
+      }
+      main {
+        max-width: 700px;
+        margin: 3em auto;
+        padding: 0.5em 1em;
+        background: var(--light-bg);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, color 0.3s;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(9.5px);
+        -webkit-backdrop-filter: blur(9.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      body.dark-mode main {
+        background: var(--dark-bg);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      }
+      h1 {
+        margin-bottom: 0.1em;
+      }
+      .datetime {
+        font-style: italic;
+        color: var(--accent);
+        margin-bottom: 1em;
+        font-weight: 600;
+      }
+      .description,
+      .awards {
+        margin-bottom: 0.5em;
+        line-height: 1.4;
+        font-size: 1.1rem;
+      }
+      .awards h3 {
+        margin-bottom: 0.3em;
+        color: var(--accent);
+      }
+      #module-countdown {
+        font-size: 1.2rem;
+        margin-bottom: 1em;
+        font-weight: bold;
+        color: var(--accent);
+      }
+      .register-btn {
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        padding: 0.75em 2em;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+      .register-btn:hover {
+        background-color: #b8323a;
+        transform: scale(1.05);
+      }
+
+      /* Modal Overlay */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1500;
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      /* Modal Content Box */
+      .modal-content {
+        margin: 10% auto;
+        padding: 20px 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 400px;
+        color: rgb(255, 103, 103);
+        position: relative;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        background: rgba(73, 73, 73, 0.459);
+        box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(143, 0, 0, 0.18);
+      }
+
+      /* Close Button */
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--accent);
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: #b8323a;
+      }
+
+      .schedule-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 1.1rem;
+        color: #dddddd;
+      }
+
+      .schedule-list li {
+        margin-bottom: 12px;
+      }
+      @media screen and (max-width: 870px) {
+        .modules .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5em;
+          margin-top: 2em;
+        }
+
+        main {
+          margin: 1em;
+          box-sizing: border-box;
+        }
+
+        .modal-content {
+          margin: 1em;
+          box-sizing: border-box;
+        }
+        .glass-ball {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 570px) {
+        .modal-content {
+          margin: 1em;
+          box-sizing: border-box;
+        }
+
+        .glass-ball {
+          display: none;
+        }
+
+        .modules .grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 1.5em;
+          margin-top: 2em;
+        }
+      }

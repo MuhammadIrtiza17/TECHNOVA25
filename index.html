@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technova - Coding Competition</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#contact-form">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Landing Section -->
+    <section id="landing" class="landing">
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+          <source
+            src="./assets/2235282-hd_1278_720_30fps.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <h1>TECHNOVA'25</h1>
+      <p>
+        A dynamic tech competition platform where <br />
+        innovators will showcase their skills in coding, robotics, AI , and
+        emerging technologies <br />
+        <span>So what are you waiting for</span>
+      </p>
+      <button class="register">Register Now</button>
+      <div id="countdown"></div>
+    </section>
+    <div id="countdown"></div>
+
+    <section id="presenter">
+      <h2>Presented By</h2>
+      <div id="presenter">
+        <img
+          src="./assets/iobmlogo-removebg-preview.png"
+          alt="Institute of Business Management "
+          class="logo"
+        />
+        <img
+          src="./assets/ccsis-removebg-preview.png"
+          alt="College of Computer Science & Information System "
+          class="logo"
+        />
+        <img src="./assets/ieee-removebg-preview.png" alt="IEEE" class="logo" />
+      </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules">
+      <h2>Competition Modules</h2>
+      <div class="grid">
+        <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483848.jpg"
+            alt="Module 1"
+          />
+          <h3>PROMPT ENGINEERING</h3>
+          <div class="description">
+           Unleash your creativity in Prompt Engineering! Craft clever, wild AI prompts that spark mind-blowing responses. Whether meme master or tech geek, prove you can command AI like a true boss!
+          </div>
+          <div class="card-btn buttons">
+            <button>
+              <a href="./module1.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483809.jpg"
+            alt="Module 1"
+          />
+          <h3>SPEED PROGRAMMING</h3>
+          <div class="description">
+          Race against time in the ultimate coding sprint! Solve tough challenges fast, showcasing lightning logic and sharp skills. No breaks, no mercy—just pure coding speed. Ready to blitz the clock?
+          </div>
+          <div class="card-btn buttons">
+            <button>
+              <a href="./module2.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483809.jpg"
+            alt="Module 1"
+          />
+          <h3>STARTUP LAUNCHPAD</h3>
+          <div class="description">
+       A high-energy stage where aspiring entrepreneurs pitch their boldest startup ideas to snag investment and turbocharge growth.
+Bring your vision, wow the crowd, and launch your dream into reality!
+          </div>
+          <div class=" card-btn buttons">
+            <button>
+              <a href="./module3.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+          <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483809.jpg"
+            alt="Module 1"
+          />
+          <h3>MATH MANIA</h3>
+          <div class="description">
+           Dive into Math Mania — a fast-paced challenge testing your speed and accuracy. Solve tough problems under pressure, sharpen your skills, and prove you’re the ultimate math whiz. Ready to crunch?
+          </div>
+          <div class="card-btn buttons">
+            <button>
+              <a href="./module3.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Calendar Button -->
+    <button id="calendar-btn" class="floating-btn" aria-label="Open Schedule">
+      <img src="./assets/calendar.png" alt="" width="30" height="30" />
+    </button>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h2>Technova Event Schedule</h2>
+        <ul class="schedule-list">
+          <li><strong>Aug 1, 2025</strong> - Opening Ceremony & Keynote</li>
+          <li><strong>Aug 2, 2025</strong> - Preliminary Coding Rounds</li>
+          <li><strong>Aug 3, 2025</strong> - Workshop & Networking</li>
+          <li><strong>Aug 4, 2025</strong> - Final Coding Challenge</li>
+          <li><strong>Aug 5, 2025</strong> - Awards & Closing Ceremony</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sponsors Carousel -->
+    <section class="sponsors">
+      <h2>Our Sponsors</h2>
+      <div class="carousel">
+        <img src="sponsor1.png" alt="Sponsor 1" />
+        <img src="sponsor2.png" alt="Sponsor 2" />
+        <!-- Repeat logos -->
+      </div>
+    </section>
+
+    <section id="module-fyp" class="modules">
+      <h2>Final Year Exibit</h2>
+      <div class="grid">
+        <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483848.jpg"
+            alt="Module 1"
+          />
+          <h3>SOFTWARE ENGINEERING</h3>
+          <div class="description">
+            Solve real-world challenges using algorithms and data structures in
+            this intense coding round.
+          </div>
+          <div class="buttons">
+            <button>
+              <a href="./module1.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483809.jpg"
+            alt="Module 1"
+          />
+          <h3>AI & DATA SCIENCE</h3>
+          <div class="description">
+            Solve real-world challenges using algorithms and data structures in
+            this intense coding round.
+          </div>
+          <div class="buttons">
+            <button>
+              <a href="./module1.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="./assets/pexels-googledeepmind-17483809.jpg"
+            alt="Module 1"
+          />
+          <h3>IOT & EMBEDDED SYSTEMS</h3>
+          <div class="description">
+            Solve real-world challenges using algorithms and data structures in
+            this intense coding round.
+          </div>
+          <div class="buttons">
+            <button>
+              <a href="./module1.html" class="read-more">Read More</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Event Section -->
+    <section id="about-event" class="about-event">
+      <h2>About Technova</h2>
+      <p>
+        Technova is the ultimate coding competition hosted by the Institute of
+        Business Management University. It challenges coders to solve real-world
+        problems with innovative and efficient algorithms. Join us to compete,
+        learn, and network with some of the brightest minds in tech!
+      </p>
+      <button><a href="./about.html" class="read-more">Read More</a></button>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Technova | Institute of Business Management</p>
+    </footer>
+    <div class="glass-ball" id="ball"></div>
+    <script>
+      const ball = document.getElementById("ball");
+
+      let mouseX = 0,
+        mouseY = 0;
+      let ballX = 0,
+        ballY = 0;
+      const speed = 0.1; // Lower = smoother and slower
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animate() {
+        // Smoothly move toward the mouse
+        ballX += (mouseX - ballX) * speed;
+        ballY += (mouseY - ballY) * speed;
+
+        ball.style.transform = `translate(${ballX}px, ${ballY}px)`;
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ... your existing code ...
+
+        const calendarBtn = document.getElementById("calendar-btn");
+        const calendarModal = document.getElementById("calendar-modal");
+        const closeModal = document.getElementById("close-modal");
+
+        if (calendarBtn && calendarModal && closeModal) {
+          calendarBtn.addEventListener("click", () => {
+            calendarModal.style.display = "block";
+          });
+
+          closeModal.addEventListener("click", () => {
+            calendarModal.style.display = "none";
+          });
+
+          window.addEventListener("click", (e) => {
+            if (e.target === calendarModal) {
+              calendarModal.style.display = "none";
+            }
+          });
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Countdown Timer ---
+        const countdown = document.getElementById("countdown");
+        const eventDate = new Date("2025-06-05T00:00:00").getTime(); // Set your event date here
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = eventDate - now;
+
+          if (distance < 0) {
+            countdown.innerHTML = "Event Started!";
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // --- Simple Auto Carousel Scroll ---
+        const carousel = document.querySelector(".carousel");
+        let scrollAmount = 0;
+        let scrollStep = 1;
+
+        function scrollCarousel() {
+          if (!carousel) return;
+
+          scrollAmount += scrollStep;
+          if (
+            scrollAmount >= carousel.scrollWidth - carousel.clientWidth ||
+            scrollAmount <= 0
+          ) {
+            scrollStep = -scrollStep; // reverse direction
+          }
+          carousel.scrollLeft = scrollAmount;
+        }
+
+        setInterval(scrollCarousel, 20);
+
+        // --- Theme Toggle ---
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+          });
+        }
+
+        // --- Contact Form Submit ---
+        const contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert(
+              "Thanks for contacting Technova! We will get back to you soon."
+            );
+            contactForm.reset();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

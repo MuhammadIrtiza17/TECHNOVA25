@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/modules.css">
+    <title>Technova - Module Details</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./index.html #modules">Modules</a>
+      <a href="./index.html #contact-form">Contact</a>
+    </nav>
+
+    <main>
+      <h1>SPEED PROGRAMMING</h1>
+      <div class="datetime" id="event-datetime">
+        August 3, 2025 | 10:00 AM - 3:00 PM
+      </div>
+
+      <div id="module-countdown">Loading countdown...</div>
+
+      <div class="description">
+       Welcome to the ultimate code sprint where logic meets lightning speed!
+Race against the clock 🕒 to crack programming challenges and show off your problem-solving skills under pressure.
+No chill — just code. Are you built for the blitz? 💻🔥
+      </div>
+
+      <div class="awards">
+        <h3>Awards:</h3>
+        <ul>
+          <li>1st Prize: $2000 + Trophy</li>
+          <li>2nd Prize: $1000 + Medal</li>
+          <li>3rd Prize: $500 + Certificate</li>
+        </ul>
+      </div>
+
+      <button
+        class="register-btn"
+        onclick="alert('Thank you for registering for the Algorithm Challenge!')"
+      >
+        Register Now
+      </button>
+
+      
+    </main>
+<button id="calendar-btn" class="floating-btn" aria-label="Open Schedule">
+        <img src="./assets/calendar.png" alt="" width="30" height="30" />
+      </button>
+
+      <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-modal" class="close">&times;</span>
+          <h2>Technova Event Schedule</h2>
+          <ul class="schedule-list">
+            <li><strong>Aug 1, 2025</strong> - Opening Ceremony & Keynote</li>
+            <li><strong>Aug 2, 2025</strong> - Preliminary Coding Rounds</li>
+            <li><strong>Aug 3, 2025</strong> - Workshop & Networking</li>
+            <li><strong>Aug 4, 2025</strong> - Final Coding Challenge</li>
+            <li><strong>Aug 5, 2025</strong> - Awards & Closing Ceremony</li>
+          </ul>
+        </div>
+      </div>
+      <div class="glass-ball" id="ball"></div>
+    <script></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ... your existing code ...
+
+        const calendarBtn = document.getElementById("calendar-btn");
+        const calendarModal = document.getElementById("calendar-modal");
+        const closeModal = document.getElementById("close-modal");
+
+        if (calendarBtn && calendarModal && closeModal) {
+          calendarBtn.addEventListener("click", () => {
+            calendarModal.style.display = "block";
+          });
+
+          closeModal.addEventListener("click", () => {
+            calendarModal.style.display = "none";
+          });
+
+          window.addEventListener("click", (e) => {
+            if (e.target === calendarModal) {
+              calendarModal.style.display = "none";
+            }
+          });
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const countdown = document.getElementById("countdown");
+        const eventDate = new Date("2025-08-01T00:00:00").getTime();
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = eventDate - now;
+
+          if (distance < 0) {
+            countdown.innerHTML = "Event Started!";
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+      });
+    </script>
+
+    <script>
+      const ball = document.getElementById("ball");
+
+      let mouseX = 0,
+        mouseY = 0;
+      let ballX = 0,
+        ballY = 0;
+      const speed = 0.1; // Lower = smoother and slower
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animate() {
+        // Smoothly move toward the mouse
+        ballX += (mouseX - ballX) * speed;
+        ballY += (mouseY - ballY) * speed;
+
+        ball.style.transform = `translate(${ballX}px, ${ballY}px)`;
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const countdown = document.getElementById("module-countdown");
+        const eventDate = new Date("2025-08-03T10:00:00").getTime();
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = eventDate - now;
+
+          if (!countdown) return;
+
+          if (distance < 0) {
+            countdown.textContent = "Event Started!";
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        updateCountdown(); // Initial call
+        setInterval(updateCountdown, 1000); // Update every second
+      });
+    </script>
+  </body>
+</html>

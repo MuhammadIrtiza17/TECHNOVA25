@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Technova & IoBM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/about.css">
+  </head>
+  <body>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./index.html #modules">Modules</a>
+      <a href="./index.html #contact-form">Contact</a>
+    </nav>
+
+    <main>
+      <section class="magazine">
+        <div>
+          <img
+            src="./assets/download (14).jpg"
+            alt="IoBM Logo" width="70"
+            height="70"
+          />
+          <div class="content">
+            <h2>Institute of Business Management (IoBM)</h2>
+            <p>
+              Established in 1995, IoBM is one of Pakistan’s premier business
+              schools, offering quality education in business, computer science,
+              and engineering. Known for its commitment to academic excellence
+              and industry collaboration, IoBM nurtures future leaders and
+              innovators.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+            alt="Technova Coding Competition"
+          />
+          <div class="content">
+            <h2>Technova Competition</h2>
+            <p>
+              Technova is the ultimate coding showdown hosted by IoBM that
+              brings together talented coders to solve challenging real-world
+              problems. It aims to promote innovation, collaboration, and growth
+              in the tech community through engaging modules and exciting
+              awards.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+            alt="Students Collaborating"
+          />
+          <div class="content">
+            <h2>Our Vision & Mission</h2>
+            <p>
+              Our vision is to foster a vibrant tech ecosystem by empowering
+              students with hands-on experience and meaningful competition.
+              Technova encourages continuous learning and networking among
+              Pakistan’s brightest young programmers.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Floating Calendar Button -->
+    <button id="calendar-btn" class="floating-btn" aria-label="Open Schedule">
+      <img src="./assets/calendar.png" alt="" width="30" height="30" />
+    </button>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h2>Technova Event Schedule</h2>
+        <ul class="schedule-list">
+          <li><strong>Aug 1, 2025</strong> - Opening Ceremony & Keynote</li>
+          <li><strong>Aug 2, 2025</strong> - Preliminary Coding Rounds</li>
+          <li><strong>Aug 3, 2025</strong> - Workshop & Networking</li>
+          <li><strong>Aug 4, 2025</strong> - Final Coding Challenge</li>
+          <li><strong>Aug 5, 2025</strong> - Awards & Closing Ceremony</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ... your existing code ...
+
+        const calendarBtn = document.getElementById("calendar-btn");
+        const calendarModal = document.getElementById("calendar-modal");
+        const closeModal = document.getElementById("close-modal");
+
+        if (calendarBtn && calendarModal && closeModal) {
+          calendarBtn.addEventListener("click", () => {
+            calendarModal.style.display = "block";
+          });
+
+          closeModal.addEventListener("click", () => {
+            calendarModal.style.display = "none";
+          });
+
+          window.addEventListener("click", (e) => {
+            if (e.target === calendarModal) {
+              calendarModal.style.display = "none";
+            }
+          });
+        }
+      });
+    </script>
+    <div class="glass-ball" id="ball"></div>
+    <script>
+      const ball = document.getElementById("ball");
+
+      let mouseX = 0,
+        mouseY = 0;
+      let ballX = 0,
+        ballY = 0;
+      const speed = 0.1; // Lower = smoother and slower
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animate() {
+        // Smoothly move toward the mouse
+        ballX += (mouseX - ballX) * speed;
+        ballY += (mouseY - ballY) * speed;
+
+        ball.style.transform = `translate(${ballX}px, ${ballY}px)`;
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>
