@@ -58,7 +58,7 @@ a{
 
 .landing {
   height:82vh;
-  width: 100vw !important;
+  width: 100% !important;
   display: flex;
   flex-direction: column;
   justify-content: center;
