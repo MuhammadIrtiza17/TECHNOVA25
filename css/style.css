@@ -421,12 +421,10 @@ video {
     gap: 1.5em;
     margin-top: 2em;
   }
- #contactForm{
+ #contact-form,#about-event{
+  width: 70%;
 
-  width:90%
-
-}
-
+ }
 
   
   .modal-content{
@@ -447,12 +445,10 @@ video {
     margin: 1em;
     box-sizing: border-box;
   }
-  #contact-form ,#about-event{
+  #contact-form,#about-event{
+  width: 70%;
 
-  width:90%
-  
-}
-
+ }
  .glass-ball {
           display: none;
         }
